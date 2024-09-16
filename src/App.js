@@ -4,17 +4,17 @@ const App = () => {
   const songs = [
     {
       name: "Covers",
-      imageUrl: "/images/song1.jpeg",
+      imageUrl: process.env.PUBLIC_URL + '/images/song1.jpeg',
       duration: 180,
     },
     {
       name: "Clouds",
-      imageUrl: "/images/song2.jpg",
+      imageUrl: process.env.PUBLIC_URL + '/images/song2.jpg',
       duration: 240,
     },
     {
       name: "Title",
-      imageUrl: "/images/song3.jpg",
+      imageUrl: process.env.PUBLIC_URL + '/images/song3.jpg',
       duration: 210,
     },
   ];
@@ -73,6 +73,7 @@ const App = () => {
 
     return () => clearInterval(interval); 
   }, [isPlaying, currentSongIndex]); 
+
   return (
     <div className="min-h-screen bg-gray-800 text-gray-200 flex flex-col">
       <div className="flex items-center justify-between p-4 bg-gray-700">
@@ -102,17 +103,17 @@ const App = () => {
 
         <div className="flex mt-10">
           <button className="bg-white py-2 px-4 mx-6" onClick={handlePrev}>
-            <img src="/images/prev-icon.png" alt="Previous" className="w-6 h-6" />
+            <img src={process.env.PUBLIC_URL + '/images/prev-icon.png'} alt="Previous" className="w-6 h-6" />
           </button>
           <button onClick={togglePlayPause} className="bg-white py-2 px-4 mx-6">
             {isPlaying ? (
-              <img src="/images/pause-icon.png" alt="Pause" className="w-6 h-6" />
+              <img src={process.env.PUBLIC_URL + '/images/pause-icon.png'} alt="Pause" className="w-6 h-6" />
             ) : (
-              <img src="/images/play-icon.png" alt="Play" className="w-6 h-6" />
+              <img src={process.env.PUBLIC_URL + '/images/play-icon.png'} alt="Play" className="w-6 h-6" />
             )}
           </button>
           <button className="bg-white py-2 px-4 mx-6" onClick={handleNext}>
-            <img src="/images/next-icon.png" alt="Next" className="w-6 h-6" />
+            <img src={process.env.PUBLIC_URL + '/images/next-icon.png'} alt="Next" className="w-6 h-6" />
           </button>
         </div>
       </div>
